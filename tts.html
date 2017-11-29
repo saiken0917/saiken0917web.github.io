@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+    <TITLE>TTS</TITLE>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NutcMD" />
+
+    <style>
+        body {
+            background-color: white;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            margin: 0;
+        }
+        /* Android 320x640 */
+        @media (device-width: 320px) and (device-height: 640px) and (orientation: portrait) {
+            body {
+                background: brown;
+            }
+
+            #deviceName::after {
+                content: 'Android 320x640';
+            }
+        }
+        /* Android 360x640 */
+        @media (device-width: 360px) and (device-height: 640px) and (orientation: portrait) {
+            body {
+                background: purple;
+            }
+
+            #deviceName::after {
+                content: 'Android 360x640';
+            }
+
+            #myPanel {
+                width: 360px;
+                height: 640px;
+            }
+        }
+
+        #tts {
+            border: solid 1px black;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    </style>
+
+    <script>
+            function sayHello()
+            {
+
+                 //console.log("sayHello");
+                //speechSynthesis.speak(new SpeechSynthesisUtterance('Hello'));
+
+
+                var speech = new SpeechSynthesisUtterance();
+                speech.text = "國立台中科技大學";
+                speech.volume = 1; // 0 to 1
+                speech.rate = 1; // 0.1 to 9
+                speech.pitch = 1; // 0 to 2, 1=normal
+                speech.lang = "zh-TW";
+                speechSynthesis.speak(speech);
+                console.log(speech);
+
+
+            }
+    </script>
+</HEAD>
+<body>
+    <div id="tts" onclick="sayHello();">sayHello</div>
+</body>
+</HTML>
