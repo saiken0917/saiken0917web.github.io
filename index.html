@@ -1,6 +1,17 @@
 <html>
 <head>
-    </head>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+		<script>
+		  var OneSignal = window.OneSignal || [];
+		  OneSignal.push(["init", {
+		      appId: "9f5db957-471d-4eae-9d95-b096a94ef27e",
+			autoRegister: true, /* Set to true to automatically prompt visitors */
+			notifyButton: {
+				enable: true /* Set to false to hide */
+			}
+		  }]);
+		</script>
+</head>
 <body>
     <h1>Hello</h1>
     <h3>www</h3>
